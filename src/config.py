@@ -1,6 +1,5 @@
 class Config:
     URL = 'https://qa-scooter.praktikum-services.ru/'
-    TIMEOUT = 20
 
 class TestData:
     NAME = 'Евгений'
