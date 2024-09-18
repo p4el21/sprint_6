@@ -1,5 +1,7 @@
 class Config:
     URL = 'https://qa-scooter.praktikum-services.ru/'
+    COUNT_PAGE = 2
+    REDIRECT_URL = 'https://dzen.ru/?yredirect=true'
 
 class TestData:
     NAME = 'Евгений'

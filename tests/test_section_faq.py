@@ -1,4 +1,4 @@
-from locators.FAQ_page_locators import SamokatLocators
+from locators.faq_page_locators import SamokatLocators
 from pages.FAQ_page import FAQPage
 import pytest
 import allure

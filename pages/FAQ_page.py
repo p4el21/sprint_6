@@ -1,6 +1,6 @@
 import allure
 from pages.base_page import BasePage
-from locators.FAQ_page_locators import SamokatLocators
+from locators.faq_page_locators import SamokatLocators
 
 class FAQPage(BasePage):
     @allure.step('Инициализация драйвера')

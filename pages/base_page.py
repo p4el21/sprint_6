@@ -56,6 +56,23 @@ class BasePage:
             print(f'Element with locator {locator} not clickable after {timeout} seconds.')
             return None
 
+    def wait_for_load_page(self, locator, timeout = 10):
+        try:
+            return WebDriverWait(self.driver, timeout).until(EC.number_of_windows_to_be(locator))
+        except TimeoutException:
+            print(f'number of open pages is not equal {locator} after {timeout} seconds.')
+            return None
+
+    def wait_url(self, locator, timeout = 10):
+        try:
+            return WebDriverWait(self.driver, timeout).until(EC.url_to_be(locator))
+        except TimeoutException:
+            print(f'Current url not equal {locator} after {timeout} seconds.')
+            return None
+
+    def switch_to_page(self):
+        return self.driver.switch_to.window(self.driver.window_handles[-1])
+
     def scroll_to_element(self, locator):
         element = self.find_element(locator)
         if element:

@@ -118,8 +118,9 @@ class OrderPage(BasePage):
     @allure.step('Переходим на страницу Дзена')
     def check_success_go_to_yandex(self):
         self.click_logo_yandex()
-        time.sleep(3)
-        self.driver.switch_to.window(self.driver.window_handles[-1])
+        self.wait_for_load_page(Config.COUNT_PAGE)
+        self.switch_to_page()
+        self.wait_url(Config.REDIRECT_URL)
         assert self.driver.current_url == 'https://dzen.ru/?yredirect=true'
 
     @allure.step('Нажимаем на кнопку "Заказать" из середины страницы')
